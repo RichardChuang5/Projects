@@ -1,0 +1,2 @@
+import collections                                  #more specifically, from collections import default dict. 
+  some_variable=collections.defaultdict[list]       #default dict will insert a key/value pair if it does not already exist.
