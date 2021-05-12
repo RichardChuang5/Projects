@@ -1,3 +1,5 @@
+Mission Statement: To ingest streams of data, or sources that continuous flows of data and store the information in the cloud, transform raw data into usable forms, and ultimately convert the information into resources or contextual information that can be used by other stakeholders.
+
 Idea #1
 Create a crypto bot trader that intakes realtime data in order to make trading decisions based on price action for any given point in time. Relevant information may include different timeframes (1m, 5m, 30m, 1hr, 1 day, 1 wk, etc.), closing/opening price, volume, and various other indicators such as % change in price relative to the amount of time, % change relative to volume, % change relative to exponential moving averages/simple moving averages/ volume weighted averages. 
 
@@ -8,3 +10,7 @@ Create an analytics/dashboard model that ingests realtime data taken from Yahoo 
   1. Within an index, for any given timeframe, provide the most volatile indexes based on price action and volume.
   2. Within SPY/SPX, determine when sector cycling occurs (e.g. big banks shift money from the tech sector (XLK) into finance (XLF) and energy (XLE), etc.) The purpose is to determine what the most common catalyst for sector cycling occurs and when they can be most often anticipated.
   3. Finding the correlation between vol in previous days to anticipate when a strong move in stocks may occur. E.g. are there any buy signals a ticker like AMZN or TSLA gives off prior to actually making the move.
+
+Idea #3
+Transform videos/images to contextual data that can then be analyzed automatically in order to provide stakeholders contextual data into the streamed media without having to watch or view the media.
+This can further be applied to viewers who are viewing the videos. We can gleam information from what type of category the video is, when the event occured, genders, location, etc. that can be extracted and applied to contextual data visualizations and further used in targeted market audiences.
