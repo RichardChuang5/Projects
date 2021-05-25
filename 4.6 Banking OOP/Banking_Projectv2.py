@@ -63,13 +63,14 @@ except:
         logging.debug('json except')
 
 ##############################################################
+
 class UserInputs:
-'''
-The function defined below is performed to determine whether or not the current instantiation is considered a new customer
-or not and checks whether or not the information entered agrees with any information held within the JSON repository.
-If they are a new customer, bank account information such as balance, account number, loan amounts, and credit card
-balances are set at 0 values.
-'''
+    '''
+    The function defined below is performed to determine whether or not the current instantiation is considered a new customer
+    or not and checks whether or not the information entered agrees with any information held within the JSON repository.
+    If they are a new customer, bank account information such as balance, account number, loan amounts, and credit card
+    balances are set at 0 values.
+    '''
     def new_customer(self):
         with open(path,'r') as read:                  
             temp=json.load(read)  
@@ -111,11 +112,11 @@ balances are set at 0 values.
             json.dump(temp, outfile, indent=4)
 
         return Options().new()
-'''
-The function returning_customer validates whether or not a customer is returning or not and validates the pin entered.
-If a customer is considered returning, i.e. the first name, last name, and date of birth are already within the
-JSON repository, then the pin must match the data recorded within the file
-'''
+    '''
+    The function returning_customer validates whether or not a customer is returning or not and validates the pin entered.
+    If a customer is considered returning, i.e. the first name, last name, and date of birth are already within the
+    JSON repository, then the pin must match the data recorded within the file
+    '''
     def returning_customer(self):
         with open(path,'r') as read:                  #To read and '.update' current existing JSON file with new customer         
             temp=json.load(read)
@@ -136,10 +137,10 @@ JSON repository, then the pin must match the data recorded within the file
             print('Maximum number of attempts exceeded. Please re-login or contact your administrator')
             sys.exit()
         return Options().new()
-'''
-json_loads reads, copies, and updates the data repository anytime we need to make any changes or updates to a 
-pre-existing user.
-'''
+    '''
+    json_loads reads, copies, and updates the data repository anytime we need to make any changes or updates to a 
+    pre-existing user.
+    '''
     def json_loads(self, string, amount=0):
         self.balance=int(amount)
         with open(path,'r') as read:                  #To read and '.update' current existing JSON file with new customer         
