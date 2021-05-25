@@ -1,0 +1,62 @@
+{
+    "RichardChuang05/05/1991": [
+        {
+            "first name": "Richard",
+            "last name": "Chuang",
+            "date of birth": "05/05/1991",
+            "pin": 55555,
+            "account": 423716146986,
+            "balance": 0,
+            "loan": 1000,
+            "credit card balance": 0
+        }
+    ],
+    "YasmeenFuentes09/22/1994": [
+        {
+            "first name": "Yasmeen",
+            "last name": "Fuentes",
+            "date of birth": "09/22/1994",
+            "pin": 66666,
+            "account": 948208879369,
+            "balance": 0,
+            "loan": 0,
+            "credit card balance": 0
+        }
+    ],
+    "conda activate base& A:/Anaconda.Python/python.exe \"c:/Users/SquareBear/Python/Projects/Banking Project/Banking_Projectv2.py\"05/05/1991": [
+        {
+            "first name": "conda activate base",
+            "last name": "& A:/Anaconda.Python/python.exe \"c:/Users/SquareBear/Python/Projects/Banking Project/Banking_Projectv2.py\"",
+            "date of birth": "05/05/1991",
+            "pin": 55555,
+            "account": 549076655946,
+            "balance": -20,
+            "loan": 0,
+            "credit card balance": 0
+        }
+    ],
+    "MarconiChuang04/27/1954": [
+        {
+            "first name": "Marconi",
+            "last name": "Chuang",
+            "date of birth": "04/27/1954",
+            "pin": 55555,
+            "account": 265044489406,
+            "balance": 0,
+            "loan": 0,
+            "credit card balance": 0
+        }
+    ],
+    "RichardChuang05/05/1990": [
+        {
+            "first name": "Richard",
+            "last name": "Chuang",
+            "date of birth": "05/05/1990",
+            "pin": 55555,
+            "account": 221196750445,
+            "balance": 0,
+            "loan": 0,
+            "credit card balance": 0
+        }
+    ]
+}
