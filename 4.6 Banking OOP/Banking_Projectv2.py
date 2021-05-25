@@ -38,7 +38,9 @@ while check==False:
     
 login_details=Global_fname+Global_lname+Global_DOB
 
-#The items below are done to store the information in JSON format.
+'''The items below are done to store the information in JSON format. In order for the variable 'path' to be used, please
+change the directory to an appropriate location on your desktop.
+'''
 path='C:\\Users\\SquareBear\\Python\\Projects\\Banking Project\\PreStage_Banking_Information.txt'
 data={}
 data[login_details]=[]
