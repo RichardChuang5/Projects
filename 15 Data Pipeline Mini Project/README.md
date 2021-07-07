@@ -9,15 +9,15 @@ The purpose of this project is to read a csv file and write the contents of the 
 def get_db_connection():
 	connection = None
 	try:
-	connection = mysql.connector.connect(user='<username>',
-										password='<some password>',
-										host='<some hostname>',
-										port='<some port>',
-										database='<some database')	
+	connection = mysql.connector.connect(user='<username>',	password='<some password>',
+								host='<some hostname>',
+								port='<some port>',
+								database='<some database')	
 
 2. The connection will then be executed via the load_third_party() connection which intakes the variables connection and file_path_csv. Connection is the function call of the first step, get_db_connection and the variable file_path_csv is the directory in which the csv file is stored on your local machine. It will be executed via the code below:
 
 def load_third_party (connection, file_path_csv):
+	
 	#assigns the SQL connection a cursor. A cursor is needed to point to the database connection to 'do something'
 	cursor = connection.cursor()
 
@@ -66,3 +66,25 @@ def load_third_party (connection, file_path_csv):
 	connection.commit()
 	cursor.close()
 	return
+										
+3. The final step once the data has been loaded into the SQL database is to use whatever statistical approach you wish to use to extract the data. In this case, I searched for the events that sold the most tickets to produce an easy to read output:
+										
+#depending on where the database is, your from statement will need to be changed accordingly
+def query_popular_tickets(connection):
+	sql_statement="""
+	select Event_Name, Num_Tickets
+	from pipeline.sales
+	order by Num_Tickets desc"""
+
+	cursor=connection.cursor()
+	cursor.execute(sql_statement)
+	records=cursor.fetchall()
+	cursor.close()
+	final="""
+	Here are the most popular tickets in the past month, in order of most popular to least:
+	  -{}: Number of tickets {}
+	  -{}: Number of tickets {}
+	  -{}: Number of tickets {}
+	  -{}: Number of tickets {}
+	  -{}: Number of tickets {}""".format(records[0][0],records[0][1],records[1][0],records[1][1],records[2][0],records[2][1],records[3][0],records[3][1],records[4][0],records[4][1])
+	return final
