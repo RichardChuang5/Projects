@@ -70,6 +70,7 @@ def load_third_party (connection, file_path_csv):
 3. The final step once the data has been loaded into the SQL database is to use whatever statistical approach you wish to use to extract the data. In this case, I searched for the events that sold the most tickets to produce an easy to read output:
 										
 #depending on where the database is, your from statement will need to be changed accordingly
+										
 def query_popular_tickets(connection):
 	sql_statement="""
 	select Event_Name, Num_Tickets
