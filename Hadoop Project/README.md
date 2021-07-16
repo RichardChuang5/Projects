@@ -18,3 +18,6 @@ Using the CMD terminal, the following commands are useful:
 2. jps: This commands lets you know what nodes are up and running. Ideally, you should have name node, data node, resource manager, and node manager up and running.
 3. hadoop fs -ls /: Shows the contents within the root directory. The '/' is mandatory, otherwise it does not read properly. 
 4. hadoop fs -put '[file directory] [location you want to place the file]'. Ultimately for me, this looked like hadoop fs -put C:/Users/Squarebear/Python/Projects/Hadoop/data.csv /input_dir
+
+To execute the MapReduce shell script
+hadoop jar C:/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar -file C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -mapper C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -file C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -reducer C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -input C:/Users/SquareBear/Python/Projects/Hadoop/data.csv -output C:/Users/SquareBear/Python/Projects/Hadoop/all_accidents
