@@ -23,4 +23,4 @@ To execute the Python command via Windows:
 type data.csv|python first_mapper.py|python first_reducer.py|python second_mapper.py|python second_reducer.py
 
 To execute the MapReduce shell script
-hadoop jar C:/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar -file C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -mapper C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -file C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -reducer C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -input C:/Users/SquareBear/Python/Projects/Hadoop/data.csv -output C:/Users/SquareBear/Python/Projects/Hadoop/all_accidents
+hadoop jar C:/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar -file C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -mapper C:/Users/SquareBear/Python/Projects/Hadoop/first_mapper.py -file C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -reducer C:/Users/SquareBear/Python/Projects/Hadoop/first_reducer.py -input C:/Users/SquareBear/Python/Projects/Hadoop/data.csv -output /input_dir
