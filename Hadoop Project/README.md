@@ -12,6 +12,9 @@ https://www.youtube.com/watch?v=735yx2Eak48&ab_channel=BinodSumanAcademy
 
 Note: The instructions per the first link require some additional editing. Within the core-site.XML file, where it requires the dfs endpoint locator, I had to remove 'localhost:9000' and replace it with '[my computer name]:[my IP address]'. This allowed the namenode and data node to run properly. I also needed to run the hortonworks sandbox in parallel with my CMD terminal
 
+![image](https://user-images.githubusercontent.com/80606434/126086634-55ef24c3-9f6a-4f4b-bb22-7ac2711e014d.png)
+
+
 ### Step 2 - Useful commands to know
 Using the CMD terminal, the following commands are useful:
 1. Not so much a command, but when you first open the CMD terminal, you need to navigate to your sbin folder within hadoop. From there, execute the start-all.cmd which will allow you to run namenode, datanode, resourcemanager, and namenodemanager.
