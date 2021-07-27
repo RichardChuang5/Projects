@@ -8,13 +8,15 @@ The goal of this capstone project is to create a crypto trading bot that can pla
 
 For further information over how to integrate the websocket client, please refer to the source documentation here: https://pypi.org/project/websocket-client/
 
-2. KafkaProducer (data extraction/wrangling) - Using the information from the websockets, we extract the messages via a json format and send the message to the KafkaProducer via the kafka module (from kafka import KafkaProducer) and send the message via the command producer.send('KafkaStreams', json.dumps(message).encode('utf-8')).
+## Step 2
+
+1. KafkaProducer (data extraction/wrangling) - Using the information from the websockets, we extract the messages via a json format and send the message to the KafkaProducer via the kafka module (from kafka import KafkaProducer) and send the message via the command producer.send('KafkaStreams', json.dumps(message).encode('utf-8')).
 
    -Local Machines: To run the KafkaProducer on your local machine, ensure that Apache Kafka (ver 2.6) and Zookeeper are installed. You will then need to change your         bootstrap server to your local host machine. For my local machine it is bootstrap_servers = ['localhost:9092']
    
    -AWS MSK: Amazon has a service called AWS MSK which allows for the creation of a virtual machine (Linux or Windows) to be hosted on their EC2 platform which then        connects to MSK. This allows for Amazon to handle instances of zookeeper (which runs in the background) leaving the heavy lifting to their servers.                      This is the approach I chose to 'play with.' This will change the bootstrap_server to the cluster location housed within the EC2 machine and the                          bootstrap TL within. In order to sync with AWS MSK, I chose to SSH into EC2 via Putty and migrated my local Python documents into the EC2 instance                        via WindowsSCP.
 
-3. KafkaConsumer (data loading) - From the KafkaProducer, we obtain the json messages and decode the utf-8 encoding in order to read the messages.
+2. KafkaConsumer (data loading) - From the KafkaProducer, we obtain the json messages and decode the utf-8 encoding in order to read the messages.
 
-4. Boto3 --> DynamoDB - Using the KafkaConsumer messages received, we then use Boto3 to sync with our AWS DynamoDB database and send the formatted messages to our database
+3. Boto3 --> DynamoDB - Using the KafkaConsumer messages received, we then use Boto3 to sync with our AWS DynamoDB database and send the formatted messages to our database
 
