@@ -1,0 +1,15 @@
+hadoop jar /Users/yasmeenfuentes/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
+ -file /Users/yasmeenfuentes/PycharmProjects/pythonProject/first_mapper.py\
+ -mapper "first_mapper.py"\
+ -file /Users/yasmeenfuentes/PycharmProjects/pythonProject/first_reducer.py\
+ -reducer "first_reducer.py"\
+ -input /Users/yasmeenfuentes/PycharmProjects/pythonProject/data.csv\
+ -output /Users/yasmeenfuentes/PycharmProjects/pythonProject/output
+
+hadoop jar /Users/yasmeenfuentes/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar\
+ -file /Users/yasmeenfuentes/PycharmProjects/pythonProject/second_mapper.py\
+ -mapper "second_mapper.py"\
+ -file /Users/yasmeenfuentes/PycharmProjects/pythonProject/second_reducer.py\
+ -reducer "second_reducer.py"\
+ -input /Users/yasmeenfuentes/PycharmProjects/pythonProject/output\
+ -output /Users/yasmeenfuentes/PycharmProjects/pythonProject/output/make_year
