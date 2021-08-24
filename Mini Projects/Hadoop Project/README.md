@@ -27,5 +27,5 @@ type data.csv|python first_mapper.py|python first_reducer.py|python second_mappe
 
 To execute via MACOS replace type with cat.
 
-Note: 
+Note: Run the final Hadoop job through 'report'
 I had to execute the final Hadoop project from a different computer running MACOS, hence the username defined in the Hadoop CLI and report.sh file are different.
