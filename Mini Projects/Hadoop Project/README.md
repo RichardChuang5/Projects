@@ -22,7 +22,8 @@ Using the CMD terminal, the following commands are useful:
 3. hadoop fs -ls /: Shows the contents within the root directory. The '/' is mandatory, otherwise it does not read properly. 
 4. hadoop fs -put '[file directory] [location you want to place the file]'. Ultimately for me, this looked like hadoop fs -put C:/Users/Squarebear/Python/Projects/Hadoop/data.csv /input_dir
 
-To execute the Python command via Windows:
+To execute the Python command via Windows-
+
 type data.csv|python first_mapper.py|python first_reducer.py|python second_mapper.py|python second_reducer.py
 
 To execute the MapReduce shell script
