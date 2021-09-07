@@ -9,8 +9,8 @@ https://aws.amazon.com/cli/ and here as well : https://boto3.amazonaws.com/v1/do
 '''
 
 # To set up the connection to your binance account. Since we are using Binance US, we need tld to indicate US
-client = Client('suLnXCgP2OViD5DhC58jLRk1Y8eyVZHwkRpVSxuYYOyEytgrFMEsvAna9s5eS41P',
-              'sND90kr7b6thNRZRIOYnqcUVcnu9KFL1U9aqsCyUFWbT1QYxxLz2mVTeFZ4fbJCc', tld = 'us')
+client = Client('xxx',
+              'xxx', tld = 'us')
 
 account_info = client.get_account()
 time = client.get_exchange_info()['timezone']
@@ -23,9 +23,9 @@ async def kafkaconsumer(some_topic, trade = False):
     '''
 
     consumer = KafkaConsumer(some_topic,
-                             bootstrap_servers=['b-1.kafkastreams.cx66e3.c4.kafka.us-east-2.amazonaws.com:9092'])
+                             bootstrap_servers=['xxx'])
     # for local computer it is 'localhost:9092'
-    # for AWS it is 'b-1.kafkastreams.cx66e3.c4.kafka.us-east-2.amazonaws.com:9092'
+    # for AWS it is 'xxx'
 
     for rec in consumer:
         rec_data = rec.value.decode('utf-8')
@@ -59,8 +59,8 @@ def boto_connect(some_database, first_msg, rec_msg, last_msg):
     client = boto3.client('dynamodb', region_name='us-east-2')
     DB = boto3.resource('dynamodb',
                         region_name='us-east-2',
-                        aws_access_key_id='AKIAS4YILQJT7RUYMCFC',
-                        aws_secret_access_key='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',
+                        aws_access_key_id='xxx',
+                        aws_secret_access_key='xxx',
                         verify=False)
     table = DB.Table(some_database)
 
@@ -87,8 +87,8 @@ def boto_trading(some_database, msg, balance, buy = False, sell = False):
     client = boto3.client('dynamodb', region_name='us-east-2')
     DB = boto3.resource('dynamodb',
                         region_name='us-east-2',
-                        aws_access_key_id='AKIAS4YILQJT7RUYMCFC',
-                        aws_secret_access_key='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',
+                        aws_access_key_id='xxx',
+                        aws_secret_access_key='xxx',
                         verify=False)
     table = DB.Table(some_database)
     if buy == True and sell == False:
