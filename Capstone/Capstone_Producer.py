@@ -8,7 +8,7 @@ cc3 = 'dogeusd'
 interval = '1m'
 socket = f'wss://stream.binance.com:9443/ws/{cc1}t@kline_{interval}/{cc2}t@kline_{interval}/{cc3}t@kline_{interval}'
 # To point to the producer that currently sits within our local computer/EC2
-producer = KafkaProducer(bootstrap_servers=['b-1.kafkastreams.cx66e3.c4.kafka.us-east-2.amazonaws.com:9092'])
+producer = KafkaProducer(bootstrap_servers=['xxx'])
 
 async def on_message():
     async with websockets.connect(socket) as crypto_stream:
