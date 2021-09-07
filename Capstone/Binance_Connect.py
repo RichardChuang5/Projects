@@ -4,8 +4,8 @@ import asyncio, logging
 
 logging.basicConfig(filename = 'Binance_Connect', level = logging.WARNING)
 
-client = Client('suLnXCgP2OViD5DhC58jLRk1Y8eyVZHwkRpVSxuYYOyEytgrFMEsvAna9s5eS41P',
-              'sND90kr7b6thNRZRIOYnqcUVcnu9KFL1U9aqsCyUFWbT1QYxxLz2mVTeFZ4fbJCc', tld = 'us')
+client = Client('xxx',
+              'xxx', tld = 'us')
 
 
 account_info = client.get_account()
