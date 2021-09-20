@@ -15,8 +15,9 @@ Messages received come in the form of JSON messages and are decoded to extract t
 ## Step 2 - Transformation
 
 1. Messages received from the websockets are handled through the boto_trading function. The Python script applies a simple trading methodology known as scalping which buys crypto if the current price has dropped 1% in relation to the prior message price, and sells if it has increased 1%. This is integrated with our Binance US wallet and buys/sells based on a percentage of our overall wallet portfolio. 
-   - It is important to note that for Binance integrations, there are certain formats you must adhere to, otherwise trading is not allowed. For instance, to trade    Ethereum, you must have a stepsize of at least 0.00001, a precision of 8, a minimum quantity of 0.00001, and a minimum notional value of $10 USD. If any of these requirements are not met an error will occur.
-   
+   - *It is important to note that for Binance integrations, there are certain formats you must adhere to, otherwise trading is not allowed. For instance, to trade    Ethereum, you must have a stepsize of at least 0.00001, a precision of 8, a minimum quantity of 0.00001, and a minimum notional value of $10 USD. If any of these requirements are not met an error will occur.*
+
+## Step 3 - Storage
 3. KafkaProducer (data extraction/wrangling) - Using the information from the websockets, we extract the messages via a json format and send the message to the KafkaProducer via the kafka module (from kafka import KafkaProducer) and send the message via the command producer.send('KafkaStreams', json.dumps(message).encode('utf-8')).
 
    -Local Machines: To run the KafkaProducer on your local machine, ensure that Apache Kafka (ver 2.6) and Zookeeper are installed. You will then need to change your         bootstrap server to your local host machine. For my local machine it is bootstrap_servers = ['localhost:9092']
