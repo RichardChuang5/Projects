@@ -5,9 +5,9 @@
 The goal of this project is to create a crypto trading bot that can place trades on the Binance marketplace platform and store the details of the trade on a cloud based storage platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
 
 The general overview of the Python scripts used are as follows
-1. Capstone_Producer
-2. Capstone_Consumer
-3. Binance_Connect
+1. Capstone_Producer - Responsible for connecting to Binance US via websockets and sending messages via AWS MSK (aka Kafka Streams)
+2. Capstone_Consumer - Decodes and consumes the messages. Used to send messages to historical transaction tables and record trades taken via boto3
+3. Binance_Connect - Responsible for providing our trading strategy as well as connecting to our Binance US wallet to create trades and drawdown current wallet information.
 
 ## Step 1 - Extraction
 
