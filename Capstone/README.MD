@@ -10,6 +10,7 @@ The general overview of the Python scripts used are as follows
 3. **Binance_Connect -** Responsible for providing our trading strategy as well as connecting to our Binance US wallet to create trades and drawdown current wallet information.
 
 ## Step 1 - Extraction
+![image](https://user-images.githubusercontent.com/80606434/134079538-1d3917c8-c0d7-4698-9d34-71d8c7be8498.png)
 
 1. **Websockets (data extraction) -** The financial data is extracted from Binance via websockets and the websocket client. For clarification, the module we use is WEBSOCKETS as opposed to WEBSOCKET which has a slightly different functionality. For our purposes, we used WEBSOCKETS which also requires us to download the module asyncio which will allow us to run the messages obtained from the websockets.connect method asynchronously. The websocket string used to connect to binance is socket = f'wss://stream.binance.com:9443/ws/{cc1}t@kline_{interval}/{cc2}t@kline_{interval}/{cc3}t@kline_{interval}'
 
@@ -18,6 +19,8 @@ For further information over how to integrate the websocket client, please refer
 Messages received come in the form of JSON messages and are decoded to extract ticker, volume, high, low, open, and close price.
 
 ## Step 2 - Transformation
+![image](https://user-images.githubusercontent.com/80606434/134079630-eba06c85-e0aa-49ff-b943-b59b9ad852a5.png)
+
 
 1. **Messages received from the websockets are handled through the boto_trading function -** The Python script applies a simple trading methodology known as scalping which buys crypto if the current price has dropped 1% in relation to the prior message price, and sells if it has increased 1%. This is integrated with our Binance US wallet and buys/sells based on a percentage of our overall wallet portfolio. 
    - *It is important to note that for Binance integrations, there are certain formats you must adhere to, otherwise trading is not allowed. For instance, to trade    Ethereum, you must have a stepsize of at least 0.00001, a precision of 8, a minimum quantity of 0.00001, and a minimum notional value of $10 USD. If any of these requirements are not met an error will occur.*
@@ -29,6 +32,7 @@ Messages received come in the form of JSON messages and are decoded to extract t
 3. **KafkaConsumer (data loading) -** From the KafkaProducer, we obtain the json messages and decode the utf-8 encoding in order to read the messages.
 
 ## Step 3 - Trading & Storage
+![image](https://user-images.githubusercontent.com/80606434/134079659-241b2a2f-3a15-49e2-a57b-7af94bffd2f1.png)
 
 1. **Boto3 --> DynamoDB -** Using the KafkaConsumer messages received, we then use Boto3 to sync with our AWS DynamoDB database and send the formatted messages to our database. These messages are sent to our 'Crypto_Table' and serve as an overall repository for historical information.
 
