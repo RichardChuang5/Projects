@@ -1,18 +1,23 @@
-# Capstone Pipeline
+# Capstone Pipeline Project - Cryptocurrency Trading
 
 ![image](https://user-images.githubusercontent.com/80606434/134072126-37f2de08-bd5d-4be2-854a-e0059854eef5.png)
 
-The goal of this capstone project is to create a crypto trading bot that can place trades on the Binance marketplace platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
+The goal of this project is to create a crypto trading bot that can place trades on the Binance marketplace platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
 
-## Step 1
+## Step 1 - Extraction
 
 1. Websockets (data extraction) - The financial data is extracted from Binance via websockets and the websocket client. For clarification, the module we use is WEBSOCKETS as opposed to WEBSOCKET which has a slightly different functionality. For our purposes, we used WEBSOCKETS which also requires us to download the module asyncio which will allow us to run the messages obtained from the websockets.connect method asynchronously. The websocket string used to connect to binance is socket = f'wss://stream.binance.com:9443/ws/{cc1}t@kline_{interval}/{cc2}t@kline_{interval}/{cc3}t@kline_{interval}'
 
 For further information over how to integrate the websocket client, please refer to the source documentation here: https://pypi.org/project/websocket-client/
 
-## Step 2
+Messages received come in the form of JSON messages and are decoded to extract ticker, volume, high, low, open, and close price.
 
-1. KafkaProducer (data extraction/wrangling) - Using the information from the websockets, we extract the messages via a json format and send the message to the KafkaProducer via the kafka module (from kafka import KafkaProducer) and send the message via the command producer.send('KafkaStreams', json.dumps(message).encode('utf-8')).
+## Step 2 - Transformation
+
+1. Messages received from the websockets are handled through the boto_trading function. The Python script applies a simple trading methodology known as scalping which buys crypto if the current price has dropped 1% in relation to the prior message price, and sells if it has increased 1%. This is integrated with our Binance US wallet and buys/sells based on a percentage of our overall wallet portfolio. 
+   - It is important to note that for Binance integrations, there are certain formats you must adhere to, otherwise trading is not allowed. For instance, to trade    Ethereum, you must have a stepsize of at least 0.00001, a precision of 8, a minimum quantity of 0.00001, and a minimum notional value of $10 USD. If any of these requirements are not met an error will occur.
+   
+3. KafkaProducer (data extraction/wrangling) - Using the information from the websockets, we extract the messages via a json format and send the message to the KafkaProducer via the kafka module (from kafka import KafkaProducer) and send the message via the command producer.send('KafkaStreams', json.dumps(message).encode('utf-8')).
 
    -Local Machines: To run the KafkaProducer on your local machine, ensure that Apache Kafka (ver 2.6) and Zookeeper are installed. You will then need to change your         bootstrap server to your local host machine. For my local machine it is bootstrap_servers = ['localhost:9092']
    
