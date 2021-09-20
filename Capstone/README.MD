@@ -2,7 +2,12 @@
 
 ![image](https://user-images.githubusercontent.com/80606434/134072126-37f2de08-bd5d-4be2-854a-e0059854eef5.png)
 
-The goal of this project is to create a crypto trading bot that can place trades on the Binance marketplace platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
+The goal of this project is to create a crypto trading bot that can place trades on the Binance marketplace platform and store the details of the trade on a cloud based storage platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
+
+The general overview of the Python scripts used are as follows
+1. Capstone_Producer
+2. Capstone_Consumer
+3. Binance_Connect
 
 ## Step 1 - Extraction
 
