@@ -1,6 +1,6 @@
 # Capstone Pipeline
 
-![this is an image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdatabricks.com%2Fglossary%2Fextract-transform-load&psig=AOvVaw2xENCAu0Ts43d3amSUsnvR&ust=1632256432820000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPC9kZ6zjvMCFQAAAAAdAAAAABAE)
+![this is an image](![image](https://user-images.githubusercontent.com/80606434/134071914-20f80b90-c59b-49c3-96da-5f9a3d636f22.png))
 
 The goal of this capstone project is to create a crypto trading bot that can place trades on the Binance marketplace platform. The stages of the project can be broken up into the following parts: obtaining the financial data, creating the pipeline to extract/transform/store the data, creating the framework for which the bot to place trades, and integrating the bots trades to execute within Binance.
 
