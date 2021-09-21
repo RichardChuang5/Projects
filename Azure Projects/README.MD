@@ -8,9 +8,9 @@ As a generalized overview, the steps taken are listed below in creating the Azur
 ### Step 1 
 This first step includes creating a subscription that will manage all other resources and groups and is the first layer in creating the environment. From here, we will also want to instantiate other items such as:
 
-   -**Resource Group** which will allow us to further control and monitor resource consumption once the environment is set up. 
+   * **Resource Group** which will allow us to further control and monitor resource consumption once the environment is set up. 
   
-   -**Storage containers** which will store our datasets as well as other storage items in formats such as Parquet, CSV, Avro, Binary, JSON, ORC, XML, and delimited text.
+   * **Storage containers** which will store our datasets as well as other storage items in formats such as Parquet, CSV, Avro, Binary, JSON, ORC, XML, and delimited text.
   
    -**Azure Data Factory** will help us monitor the overall health of the pipeline. It will allow us to integrate our different technologies in a simple, easy to use interface and allows for customization. Think of it as a one-stop-shop for systems integrations. For example, if you have various SQL dataset jobs that need to be run, you can configure them all at once through the data factory via single linked service as opposed to updating each SQL job individually.
   
