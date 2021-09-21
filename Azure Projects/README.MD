@@ -5,7 +5,8 @@ The goal of this Azure project is to build an end to end Azure pipeline with the
 ## Overview
 As a generalized overview, the steps taken are listed below in creating the Azure environment
 
-**Step 1 -** This first step includes creating a subscription that will manage all other resources and groups and is the first layer in creating the environment. From here, we will also want to instantiate other items such as:
+### Step 1 
+This first step includes creating a subscription that will manage all other resources and groups and is the first layer in creating the environment. From here, we will also want to instantiate other items such as:
 
    -**Resource Group** which will allow us to further control and monitor resource consumption once the environment is set up. 
   
