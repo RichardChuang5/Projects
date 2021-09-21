@@ -1,8 +1,6 @@
-# HADOOP
-
 ![image](https://user-images.githubusercontent.com/80606434/134219834-d7ee3046-9b08-4195-8cb5-f89c7d7a79b4.png)
 
-This overview is to provide a rundown of how to use Hadoop on a Windows machine.
+This overview is to provide a rundown of how to use and run a Hadoop job to breakdown various key value pairs within a dataset using Python.
 
 ### Step 1 - Setting up Hadoop
 Download Hadoop from the Apache website and follow the steps outlined here: 
