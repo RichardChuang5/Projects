@@ -15,7 +15,7 @@ This first step includes setting up the overall Azure environment to manage the 
  
 We will also use an instantiation of PySpark run in a Jupyter notebook in HDInsight to run some rudimentary SQL and other data wrangling over some financial data, just to ensure that the cluster is working as expected.
  
- **Note:** *For the HDInsight cluster, it is important to note that if the cluster is not in use, **YOU SHOULD SHUT IT DOWN**. This will avoid any unecessary costs as you will be charged, in addition for the hours spent using the resource, but as well as just the cluster being in existence. Spinning up/shutting down a cluster does not take much time and may save a lot of resources in the future. If you choose not to do this, be sure to monitor expenses through the 'Cost Management + Billing' page in your Azure portal.*
+ **Note:** *For the HDInsight cluster, it is important to note that if the cluster is not in use, **YOU SHOULD SHUT IT DOWN**. This will avoid any unecessary costs as you will be charged, in addition for the hours spent using the resource, just for the cluster being in existence. Spinning up/shutting down a cluster does not take much time and may save a lot of resources in the future. If you choose not to do this, be sure to monitor expenses through the 'Cost Management + Billing' page in your Azure portal.*
 
 
 
