@@ -12,11 +12,13 @@ We will work with two stock symbols: AAPL and TSLA. The workflow should be sched
 Note: The Airflow environment is set up using Docker based off the image made from Puckel. More information can be found here:
 https://github.com/puckel/docker-airflow
 
+### Learning Objectives
 With this mini-project, you will utilize Apache Airflow to orchestrate your pipeline, exercise the DAG creation, uses of various operators (BashOperator, PythonOperator, etc), setting up order of operation of each task.
 In this mini-project, you will gain familiarity with how to use Apache Airflow to automate data pipelining tasks. Along the way, you will learn how to:
-● Use Apache Airflow to orchestrate your pipeline
-● Exercise DAG creation
-● Use Various Airflow operators like BashOperator and PythonOperator
-● Set up the order operation of each task
-● Use Celery Executor to run your job
+
+- Use Apache Airflow to orchestrate your pipeline
+- Exercise DAG creation
+- Use Various Airflow operators like BashOperator and PythonOperator
+- Set up the order operation of each task
+- Use the Local Executor to run your job
 
