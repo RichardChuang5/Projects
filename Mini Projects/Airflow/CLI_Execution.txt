@@ -1,0 +1,746 @@
+yasmeenfuentes@yasmeens-MacBook-Pro docker-airflow % docker-compose -f docker-compose-LocalExecutor.yml up
+[+] Running 2/0
+ ⠿ Container docker-airflow_postgres_1   Created                                                                                                                     0.0s
+ ⠿ Container docker-airflow_webserver_1  Created                                                                                                                     0.0s
+Attaching to postgres_1, webserver_1
+postgres_1   | 
+postgres_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres_1   | 
+postgres_1   | LOG:  database system was shut down at 2021-09-30 18:39:49 UTC
+postgres_1   | LOG:  MultiXact member wraparound protections are now enabled
+postgres_1   | LOG:  autovacuum launcher started
+postgres_1   | LOG:  database system is ready to accept connections
+postgres_1   | LOG:  incomplete startup packet
+webserver_1  | [2021-09-30 18:40:01,306] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=19
+webserver_1  | DB: postgresql+psycopg2://airflow:***@postgres:5432/airflow
+webserver_1  | [2021-09-30 18:40:03,324] {{db.py:368}} INFO - Creating tables
+webserver_1  | INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+webserver_1  | INFO  [alembic.runtime.migration] Will assume transactional DDL.
+webserver_1  | Done.
+webserver_1  | [2021-09-30 18:40:07,567] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=1
+webserver_1  | [2021-09-30 18:40:07,573] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=31
+webserver_1  |   ____________       _____________
+webserver_1  |  ____    |__( )_________  __/__  /________      __
+webserver_1  | ____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+webserver_1  | ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+webserver_1  |  _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+webserver_1  | [2021-09-30 18:40:09,413] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:09,428] {{scheduler_job.py:1344}} INFO - Starting the scheduler
+webserver_1  | [2021-09-30 18:40:09,430] {{scheduler_job.py:1352}} INFO - Running execute loop for -1 seconds
+webserver_1  | [2021-09-30 18:40:09,431] {{scheduler_job.py:1353}} INFO - Processing each file at most -1 times
+webserver_1  | [2021-09-30 18:40:09,431] {{scheduler_job.py:1356}} INFO - Searching for files in /usr/local/airflow/dags
+webserver_1  | [2021-09-30 18:40:09,454] {{scheduler_job.py:1358}} INFO - There are 3 files in /usr/local/airflow/dags
+webserver_1  |   ____________       _____________
+webserver_1  |  ____    |__( )_________  __/__  /________      __
+webserver_1  | ____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+webserver_1  | ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+webserver_1  |  _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+webserver_1  | [2021-09-30 18:40:09,778] {{scheduler_job.py:1409}} INFO - Resetting orphaned tasks for active dag runs
+webserver_1  | [2021-09-30 18:40:09,825] {{dag_processing.py:556}} INFO - Launched DagFileProcessorManager with pid: 172
+webserver_1  | [2021-09-30 18:40:09,927] {{settings.py:54}} INFO - Configured default timezone <Timezone [UTC]>
+webserver_1  | [2021-09-30 18:40:09,955] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=172
+webserver_1  | [2021-09-30 18:40:10,189] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:10,193] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | Running the Gunicorn Server with:
+webserver_1  | Workers: 4 sync
+webserver_1  | Host: 0.0.0.0:8080
+webserver_1  | Timeout: 120
+webserver_1  | Logfiles: - -
+webserver_1  | =================================================================            
+webserver_1  | [2021-09-30 18:40:13,906] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:27:38.823112+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:13,923] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:40:13,925] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:40:13,937] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:27:38.823112+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:13,961] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:27:38.823112+00:00 [queued]>
+webserver_1  | [2021-09-30 18:40:13,962] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'TSLA_Bash', datetime.datetime(2021, 9, 30, 18, 27, 38, 823112, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 3 and queue default
+webserver_1  | [2021-09-30 18:40:13,965] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'TSLA_Bash', '2021-09-30T18:27:38.823112+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:13,980] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'TSLA_Bash', '2021-09-30T18:27:38.823112+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:15,064] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=243
+webserver_1  | [2021-09-30 18:40:15 +0000] [243] [INFO] Starting gunicorn 19.10.0
+webserver_1  | [2021-09-30 18:40:15 +0000] [243] [INFO] Listening at: http://0.0.0.0:8080 (243)
+webserver_1  | [2021-09-30 18:40:15 +0000] [243] [INFO] Using worker: sync
+webserver_1  | [2021-09-30 18:40:15 +0000] [285] [INFO] Booting worker with pid: 285
+webserver_1  | [2021-09-30 18:40:15 +0000] [287] [INFO] Booting worker with pid: 287
+webserver_1  | [2021-09-30 18:40:15 +0000] [289] [INFO] Booting worker with pid: 289
+webserver_1  | [2021-09-30 18:40:15 +0000] [291] [INFO] Booting worker with pid: 291
+webserver_1  | [2021-09-30 18:40:18,699] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:18,708] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-09-30 18:40:19,025] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:19,031] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-09-30 18:40:19,209] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=264
+webserver_1  | [2021-09-30 18:40:19,236] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:19,253] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-09-30 18:40:19,545] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:19,550] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-09-30 18:40:22,577] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:22,592] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:23 +0000] "GET /admin/ HTTP/1.1" 200 38543 "http://localhost:8080/admin/airflow/log?task_id=Query&dag_id=marketvol&execution_date=2021-09-30T18%3A30%3A47.655130%2B00%3A00&format=json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:23 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1335 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:23 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 105 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:23 +0000] "GET /admin/airflow/task_stats?dag_ids=marketvol,marketvol2,tutorial HTTP/1.1" 200 4365 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.TSLA_Bash 2021-09-30T18:27:38.823112+00:00 [queued]> d465e697584c
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:28 +0000] "GET /admin/airflow/tree?dag_id=marketvol HTTP/1.1" 200 12321 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-09-30 18:40:32,149] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:32 +0000] "POST /admin/airflow/trigger?dag_id=marketvol&origin=%2Fadmin%2Fairflow%2Ftree%3Fdag_id%3Dmarketvol HTTP/1.1" 302 279 "http://localhost:8080/admin/airflow/tree?dag_id=marketvol" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:33 +0000] "GET /admin/airflow/tree?dag_id=marketvol HTTP/1.1" 200 12444 "http://localhost:8080/admin/airflow/tree?dag_id=marketvol" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-09-30 18:40:35,925] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.Init_Bash_Operator 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:35,936] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:40:35,937] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:40:35,945] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Init_Bash_Operator 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:35,957] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Init_Bash_Operator 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:40:35,958] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'Init_Bash_Operator', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 6 and queue default
+webserver_1  | [2021-09-30 18:40:35,959] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'Init_Bash_Operator', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:35,965] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.TSLA_Bash execution_date=2021-09-30 18:27:38.823112+00:00 exited with status success for try_number 3
+webserver_1  | [2021-09-30 18:40:35,983] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'Init_Bash_Operator', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:38,636] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=499
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:38 +0000] "GET /admin/airflow/graph?dag_id=marketvol&execution_date= HTTP/1.1" 200 9432 "http://localhost:8080/admin/airflow/tree?dag_id=marketvol" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:40 +0000] "GET /admin/airflow/object/task_instances?dag_id=marketvol&execution_date=2021-09-30T18%3A40%3A32.140140%2B00%3A00 HTTP/1.1" 200 2548 "http://localhost:8080/admin/airflow/graph?dag_id=marketvol&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-09-30 18:40:40,657] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:40,661] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.Init_Bash_Operator 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:40:43,941] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Python 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:43,952] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:40:43,953] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:40:43,962] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Python 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:43,972] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Python 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:40:43,973] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'TSLA_Python', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 5 and queue default
+webserver_1  | [2021-09-30 18:40:43,974] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'TSLA_Python', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:43,984] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'TSLA_Python', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:46,975] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=585
+webserver_1  | [2021-09-30 18:40:49,165] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:49,169] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.TSLA_Python 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:40:52 +0000] "GET /admin/airflow/object/task_instances?dag_id=marketvol&execution_date=2021-09-30T18%3A40%3A32.140140%2B00%3A00 HTTP/1.1" 200 2759 "http://localhost:8080/admin/airflow/graph?dag_id=marketvol&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-09-30 18:40:53,974] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.AAPL_Python 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:53,984] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:40:53,985] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:40:53,994] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.AAPL_Python 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:40:54,007] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.AAPL_Python 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:40:54,008] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'AAPL_Python', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 4 and queue default
+webserver_1  | [2021-09-30 18:40:54,009] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'AAPL_Python', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:54,014] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.Init_Bash_Operator execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | [2021-09-30 18:40:54,023] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'AAPL_Python', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:40:56,617] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=684
+webserver_1  | [2021-09-30 18:40:58,552] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:40:58,556] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.AAPL_Python 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:41:01,988] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:02,000] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:41:02,001] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:41:02,013] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:02,026] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.TSLA_Bash 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:41:02,028] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'TSLA_Bash', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 3 and queue default
+webserver_1  | [2021-09-30 18:41:02,029] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'TSLA_Bash', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:02,035] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.TSLA_Python execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | [2021-09-30 18:41:02,073] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'TSLA_Bash', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:04,780] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=772
+webserver_1  | [2021-09-30 18:41:06,700] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:41:06,704] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.TSLA_Bash 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:41:12,008] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.Aapl_Bash 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:12,019] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:41:12,020] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:41:12,029] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Aapl_Bash 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:12,041] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Aapl_Bash 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:41:12,042] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'Aapl_Bash', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 2 and queue default
+webserver_1  | [2021-09-30 18:41:12,043] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'Aapl_Bash', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:12,047] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.AAPL_Python execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | [2021-09-30 18:41:12,082] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'Aapl_Bash', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:14,604] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=882
+webserver_1  | [2021-09-30 18:41:16,575] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:41:16,579] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.Aapl_Bash 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:41:20,027] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:20,037] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:41:20,038] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:41:20,047] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:40:32.140140+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:41:20,058] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:40:32.140140+00:00 [queued]>
+webserver_1  | [2021-09-30 18:41:20,059] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'Query', datetime.datetime(2021, 9, 30, 18, 40, 32, 140140, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 1 and queue default
+webserver_1  | [2021-09-30 18:41:20,060] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'Query', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:20,065] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.TSLA_Bash execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | [2021-09-30 18:41:20,096] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'Query', '2021-09-30T18:40:32.140140+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:41:22,715] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=968
+webserver_1  | [2021-09-30 18:41:24,636] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:41:24,641] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.Query 2021-09-30T18:40:32.140140+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:41:28,048] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.Aapl_Bash execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | [2021-09-30 18:41:36,067] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.Query execution_date=2021-09-30 18:40:32.140140+00:00 exited with status success for try_number 1
+webserver_1  | 172.21.0.1 - - [30/Sep/2021:18:41:51 +0000] "GET /admin/airflow/object/task_instances?dag_id=marketvol&execution_date=2021-09-30T18%3A40%3A32.140140%2B00%3A00 HTTP/1.1" 200 3228 "http://localhost:8080/admin/airflow/graph?dag_id=marketvol&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-09-30 18:42:02,110] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:30:47.655130+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:42:02,123] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-09-30 18:42:02,124] {{scheduler_job.py:1008}} INFO - DAG marketvol has 0/16 running and queued tasks
+webserver_1  | [2021-09-30 18:42:02,134] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:30:47.655130+00:00 [scheduled]>
+webserver_1  | [2021-09-30 18:42:02,150] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: marketvol.Query 2021-09-30 18:30:47.655130+00:00 [queued]>
+webserver_1  | [2021-09-30 18:42:02,152] {{scheduler_job.py:1168}} INFO - Sending ('marketvol', 'Query', datetime.datetime(2021, 9, 30, 18, 30, 47, 655130, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 1 and queue default
+webserver_1  | [2021-09-30 18:42:02,153] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'marketvol', 'Query', '2021-09-30T18:30:47.655130+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:42:02,201] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'marketvol', 'Query', '2021-09-30T18:30:47.655130+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/DAG.py']
+webserver_1  | [2021-09-30 18:42:04,793] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=1480
+webserver_1  | [2021-09-30 18:42:06,660] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-09-30 18:42:06,665] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/DAG.py
+webserver_1  | Running %s on host %s <TaskInstance: marketvol.Query 2021-09-30T18:30:47.655130+00:00 [queued]> d465e697584c
+webserver_1  | [2021-09-30 18:42:18,140] {{scheduler_job.py:1311}} INFO - Executor reports execution of marketvol.Query execution_date=2021-09-30 18:30:47.655130+00:00 exited with status success for try_number 3
+webserver_1  | Process QueuedLocalWorker-8:
+webserver_1  | Process QueuedLocalWorker-6:
+webserver_1  | Process QueuedLocalWorker-9:
+webserver_1  | Process QueuedLocalWorker-5:
+webserver_1  | Process QueuedLocalWorker-7:
+webserver_1  | Process QueuedLocalWorker-3:
+webserver_1  | Process QueuedLocalWorker-4:
+webserver_1  | Process QueuedLocalWorker-32:
+webserver_1  | Process QueuedLocalWorker-2:
+webserver_1  | Process QueuedLocalWorker-33:
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  | Process QueuedLocalWorker-31:
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | EOFError
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  | Process QueuedLocalWorker-30:
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  | Process QueuedLocalWorker-27:
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  | Process QueuedLocalWorker-10:
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | EOFError
+webserver_1  | Process QueuedLocalWorker-14:
+webserver_1  | Process QueuedLocalWorker-11:
+webserver_1  | Process QueuedLocalWorker-23:
+webserver_1  | Process QueuedLocalWorker-16:
+webserver_1  | Process QueuedLocalWorker-24:
+webserver_1  | Process QueuedLocalWorker-21:
+webserver_1  | Process QueuedLocalWorker-20:
+webserver_1  | Process QueuedLocalWorker-18:
+webserver_1  | Process QueuedLocalWorker-25:
+webserver_1  | Process QueuedLocalWorker-13:
+webserver_1  | Process QueuedLocalWorker-17:
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  | Process QueuedLocalWorker-19:
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Process QueuedLocalWorker-28:
+webserver_1  | Process QueuedLocalWorker-29:
+webserver_1  | Process QueuedLocalWorker-22:
+webserver_1  | Process QueuedLocalWorker-12:
+webserver_1  | Process QueuedLocalWorker-26:
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Process QueuedLocalWorker-15:
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | Traceback (most recent call last):
+webserver_1  | EOFError
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  | EOFError
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | EOFError
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+webserver_1  |     self.run()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 112, in run
+webserver_1  |     key, command = self.task_queue.get()
+webserver_1  |   File "<string>", line 2, in get
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 819, in _callmethod
+webserver_1  |     kind, result = conn.recv()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 250, in recv
+webserver_1  |     buf = self._recv_bytes()
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+webserver_1  |     buf = self._recv(4)
+webserver_1  | EOFError
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+webserver_1  |     raise EOFError
+webserver_1  | EOFError
+webserver_1  | EOFError
+webserver_1  | [2021-09-30 18:48:59,859] {{scheduler_job.py:1382}} ERROR - Exception when executing execute_helper
+webserver_1  | Traceback (most recent call last):
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 1380, in _execute
+webserver_1  |     self._execute_helper()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 1441, in _execute_helper
+webserver_1  |     if not self._validate_and_run_task_instances(simple_dag_bag=simple_dag_bag):
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 1503, in _validate_and_run_task_instances
+webserver_1  |     self.executor.heartbeat()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/base_executor.py", line 134, in heartbeat
+webserver_1  |     self.sync()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 231, in sync
+webserver_1  |     self.impl.sync()
+webserver_1  |   File "/usr/local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 199, in sync
+webserver_1  |     results = self.executor.result_queue.get_nowait()
+webserver_1  |   File "<string>", line 2, in get_nowait
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/managers.py", line 818, in _callmethod
+webserver_1  |     conn.send((self._id, methodname, args, kwds))
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 206, in send
+webserver_1  |     self._send_bytes(_ForkingPickler.dumps(obj))
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 404, in _send_bytes
+webserver_1  |     self._send(header + buf)
+webserver_1  |   File "/usr/local/lib/python3.7/multiprocessing/connection.py", line 368, in _send
+webserver_1  |     n = write(self._handle, buf)
+webserver_1  | BrokenPipeError: [Errno 32] Broken pipe
+webserver_1  | [2021-09-30 18:48:59,898] {{helpers.py:322}} INFO - Sending Signals.SIGTERM to GPID 172
+webserver_1  | [2021-09-30 18:48:59,954] {{helpers.py:288}} INFO - Process psutil.Process(pid=6267, status='terminated') (6267) terminated with exit code None
+webserver_1  | [2021-09-30 18:48:59,983] {{helpers.py:288}} INFO - Process psutil.Process(pid=172, status='terminated') (172) terminated with exit code 0
+webserver_1  | [2021-09-30 18:48:59,986] {{helpers.py:288}} INFO - Process psutil.Process(pid=6271, status='terminated') (6271) terminated with exit code None
+webserver_1  | [2021-09-30 18:48:59,988] {{scheduler_job.py:1385}} INFO - Exited execute loop
