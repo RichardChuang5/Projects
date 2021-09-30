@@ -1,4 +1,6 @@
 # Airflow
+![image](https://user-images.githubusercontent.com/80606434/135514848-8339a38d-0342-4d30-99e4-96206cc1a548.png)
+
 
 The purpose of this mini project is to create a data pipeline to extract online stock market data and deliver analytical results. The Yahoo Finance API is the main data source (yfinance).Yahoo Finance provides intra-day market price details down a one-minute interval.
 
