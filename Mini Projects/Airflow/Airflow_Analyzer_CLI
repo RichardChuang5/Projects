@@ -1,0 +1,498 @@
+yasmeenfuentes@yasmeens-MacBook-Pro docker-airflow % docker-compose -f docker-compose-LocalExecutor.yml up
+Starting docker-airflow_postgres_1 ... done
+Starting docker-airflow_webserver_1 ... done
+Attaching to docker-airflow_postgres_1, docker-airflow_webserver_1
+postgres_1   | 
+postgres_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres_1   | 
+postgres_1   | LOG:  database system was shut down at 2021-10-21 21:12:28 UTC
+postgres_1   | LOG:  MultiXact member wraparound protections are now enabled
+postgres_1   | LOG:  autovacuum launcher started
+postgres_1   | LOG:  database system is ready to accept connections
+postgres_1   | LOG:  incomplete startup packet
+webserver_1  | [2021-10-21 21:12:48,882] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=16
+webserver_1  | DB: postgresql+psycopg2://airflow:***@postgres:5432/airflow
+webserver_1  | [2021-10-21 21:12:50,725] {{db.py:368}} INFO - Creating tables
+webserver_1  | INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+webserver_1  | INFO  [alembic.runtime.migration] Will assume transactional DDL.
+webserver_1  | Done.
+webserver_1  | [2021-10-21 21:12:53,983] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=28
+webserver_1  | [2021-10-21 21:12:53,988] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=1
+webserver_1  |   ____________       _____________
+webserver_1  |  ____    |__( )_________  __/__  /________      __
+webserver_1  | ____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+webserver_1  | ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+webserver_1  |  _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/  ____________       _____________
+webserver_1  |  ____    |__( )_________  __/__  /________      __
+webserver_1  | ____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+webserver_1  | ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+webserver_1  |  _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+webserver_1  | 
+webserver_1  | [2021-10-21 21:12:55,932] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:12:55,947] {{scheduler_job.py:1344}} INFO - Starting the scheduler
+webserver_1  | [2021-10-21 21:12:55,948] {{scheduler_job.py:1352}} INFO - Running execute loop for -1 seconds
+webserver_1  | [2021-10-21 21:12:55,949] {{scheduler_job.py:1353}} INFO - Processing each file at most -1 times
+webserver_1  | [2021-10-21 21:12:55,950] {{scheduler_job.py:1356}} INFO - Searching for files in /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:12:55,965] {{scheduler_job.py:1358}} INFO - There are 0 files in /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:12:56,213] {{scheduler_job.py:1409}} INFO - Resetting orphaned tasks for active dag runs
+webserver_1  | [2021-10-21 21:12:56,319] {{base_job.py:316}} INFO - Reset the following 16 TaskInstances:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:10:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:09:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:08:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:19:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:18:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:17:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:16:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:15:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:14:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:13:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:12:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:11:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:07:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:06:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:05:00+00:00 [None]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:04:00+00:00 [None]>
+webserver_1  | [2021-10-21 21:12:56,325] {{dag_processing.py:556}} INFO - Launched DagFileProcessorManager with pid: 189
+webserver_1  | [2021-10-21 21:12:56,415] {{settings.py:54}} INFO - Configured default timezone <Timezone [UTC]>
+webserver_1  | [2021-10-21 21:12:56,444] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=189
+webserver_1  | [2021-10-21 21:12:56,530] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:12:56,532] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | Running the Gunicorn Server with:
+webserver_1  | Workers: 4 sync
+webserver_1  | Host: 0.0.0.0:8080
+webserver_1  | Timeout: 120
+webserver_1  | Logfiles: - -
+webserver_1  | =================================================================            
+webserver_1  | [2021-10-21 21:12:59,952] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=224
+webserver_1  | [2021-10-21 21:13:00 +0000] [224] [INFO] Starting gunicorn 19.10.0
+webserver_1  | [2021-10-21 21:13:00 +0000] [224] [INFO] Listening at: http://0.0.0.0:8080 (224)
+webserver_1  | [2021-10-21 21:13:00 +0000] [224] [INFO] Using worker: sync
+webserver_1  | [2021-10-21 21:13:00 +0000] [233] [INFO] Booting worker with pid: 233
+webserver_1  | [2021-10-21 21:13:00 +0000] [235] [INFO] Booting worker with pid: 235
+webserver_1  | [2021-10-21 21:13:00 +0000] [237] [INFO] Booting worker with pid: 237
+webserver_1  | [2021-10-21 21:13:00 +0000] [239] [INFO] Booting worker with pid: 239
+webserver_1  | [2021-10-21 21:13:02,262] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:13:02,268] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:13:02,333] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:13:02,338] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:13:02,404] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:13:02,409] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:13:02,504] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:13:02,509] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:19 +0000] "GET / HTTP/1.1" 302 221 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:20 +0000] "GET /admin/ HTTP/1.1" 200 27748 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:20 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:20 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1491 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:21 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:24 +0000] "GET /admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=success HTTP/1.1" 200 124849 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:27 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-01+00%3A07%3A00%2B00%3A00 HTTP/1.1" 200 9308 "http://localhost:8080/admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=success" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:31 +0000] "POST /admin/airflow/refresh?dag_id=log_analyzer HTTP/1.1" 302 435 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-01+00%3A07%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:32 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-01+00%3A07%3A00%2B00%3A00 HTTP/1.1" 200 9382 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-01+00%3A07%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.models.taskinstance.TaskInstance using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.operators.python_operator.PythonOperator using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:40 +0000] "GET /admin/airflow/task?task_id=AAPL_logging_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A07%3A00%2B00%3A00 HTTP/1.1" 200 50884 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-01+00%3A07%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:40 +0000] "GET /admin/admin/admin/js/form-1.0.0.js HTTP/1.1" 404 3862 "http://localhost:8080/admin/airflow/task?task_id=AAPL_logging_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A07%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:46 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/airflow/task?task_id=AAPL_logging_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A07%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:46 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:46 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:46 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1491 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:49 +0000] "GET /admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=success HTTP/1.1" 200 124849 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:59 +0000] "POST /admin/taskinstance/action/ HTTP/1.1" 302 371 "http://localhost:8080/admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=success" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:13:59 +0000] "GET /admin/taskinstance/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=success HTTP/1.1" 200 30967 "http://localhost:8080/admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=success" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:01 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/taskinstance/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=success" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:01 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:01 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:01 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1490 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:14:06,962] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:07 +0000] "POST /admin/airflow/trigger?dag_id=log_analyzer&origin=http://localhost:8080/admin/ HTTP/1.1" 302 263 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:08 +0000] "GET /admin/ HTTP/1.1" 200 28044 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:08 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:08 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:08 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1490 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:11 +0000] "GET /admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=null HTTP/1.1" 200 30631 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:14 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=null" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:14 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:14 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1490 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:14 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:16 +0000] "GET /admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running HTTP/1.1" 200 69195 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:19 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-21+18%3A47%3A45.237571%2B00%3A00 HTTP/1.1" 200 9468 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:22 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-21+18%3A47%3A45.237571%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:22 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1793 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:23 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 212 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:23 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1490 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:25 +0000] "GET /admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running HTTP/1.1" 200 69195 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:31 +0000] "POST /admin/dagrun/action/ HTTP/1.1" 302 359 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:31 +0000] "GET /admin/dagrun/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=running HTTP/1.1" 200 20971 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:33 +0000] "GET /admin/ HTTP/1.1" 200 27386 "http://localhost:8080/admin/dagrun/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:33 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:33 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 105 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:33 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:14:37,939] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:38 +0000] "POST /admin/airflow/trigger?dag_id=log_analyzer&origin=http://localhost:8080/admin/ HTTP/1.1" 302 263 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:38 +0000] "GET /admin/ HTTP/1.1" 200 28044 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:38 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:38 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 211 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:38 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:41 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer HTTP/1.1" 200 9253 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:43 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9109 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:49 +0000] "POST /admin/airflow/refresh?dag_id=log_analyzer HTTP/1.1" 302 369 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:14:49 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9181 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:25 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer&num_runs=&root= HTTP/1.1" 200 9264 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:31 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date= HTTP/1.1" 200 9106 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer&num_runs=&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:35 +0000] "POST /admin/airflow/run HTTP/1.1" 302 389 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:35 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date= HTTP/1.1" 200 9193 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:43 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:43 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:43 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 211 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:43 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:47 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer HTTP/1.1" 200 9253 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:15:57 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9109 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:08 +0000] "POST /admin/airflow/refresh?dag_id=log_analyzer HTTP/1.1" 302 369 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:08 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9181 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:14 +0000] "POST /admin/airflow/refresh?dag_id=log_analyzer HTTP/1.1" 302 369 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:14 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9180 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:18 +0000] "GET /admin/airflow/log?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00&format=json HTTP/1.1" 200 35029 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:18 +0000] "GET /admin/admin/admin/js/form-1.0.0.js HTTP/1.1" 404 3862 "http://localhost:8080/admin/airflow/log?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00&format=json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:20 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00 HTTP/1.1" 200 9105 "http://localhost:8080/admin/airflow/log?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00&format=json" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:22 +0000] "GET /admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_task_id_equals=TSLA_logging_errors&sort=3&desc=1 HTTP/1.1" 200 150324 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:30 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-21+18%3A49%3A03.910336%2B00%3A00 HTTP/1.1" 200 9188 "http://localhost:8080/admin/taskinstance/?flt1_dag_id_equals=log_analyzer&flt2_task_id_equals=TSLA_logging_errors&sort=3&desc=1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:33 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer&num_runs=&root= HTTP/1.1" 200 9262 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=2021-10-21+18%3A49%3A03.910336%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:35 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date= HTTP/1.1" 200 9107 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer&num_runs=&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:37 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:37 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:37 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 211 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:37 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:40 +0000] "GET /admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running HTTP/1.1" 200 23454 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:42 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&run_id=manual__2021-10-21T21%3A14%3A37.933738%2B00%3A00&execution_date=2021-10-21+21%3A14%3A37.933738%2B00%3A00 HTTP/1.1" 200 9107 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:47 +0000] "POST /admin/airflow/run HTTP/1.1" 302 569 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&run_id=manual__2021-10-21T21%3A14%3A37.933738%2B00%3A00&execution_date=2021-10-21+21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:47 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&run_id=manual__2021-10-21T21%3A14%3A37.933738%2B00%3A00&execution_date=2021-10-21+21%3A14%3A37.933738%2B00%3A00 HTTP/1.1" 200 9195 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&run_id=manual__2021-10-21T21%3A14%3A37.933738%2B00%3A00&execution_date=2021-10-21+21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.models.taskinstance.TaskInstance using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.operators.python_operator.PythonOperator using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:55 +0000] "GET /admin/airflow/task?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00 HTTP/1.1" 200 50781 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&run_id=manual__2021-10-21T21%3A14%3A37.933738%2B00%3A00&execution_date=2021-10-21+21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:16:55 +0000] "GET /admin/admin/admin/js/form-1.0.0.js HTTP/1.1" 404 3862 "http://localhost:8080/admin/airflow/task?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:17:02,956] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:03 +0000] "POST /admin/airflow/trigger?dag_id=log_analyzer&origin=%2Fadmin%2Fairflow%2Ftree%3Fdag_id%3Dlog_analyzer HTTP/1.1" 302 285 "http://localhost:8080/admin/airflow/task?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:03 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer HTTP/1.1" 200 9409 "http://localhost:8080/admin/airflow/task?task_id=TSLA_logging_errors&dag_id=log_analyzer&execution_date=2021-10-21T21%3A14%3A37.933738%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:06 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9130 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:29 +0000] "GET /admin/airflow/code?dag_id=log_analyzer&root= HTTP/1.1" 200 40004 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:35 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date= HTTP/1.1" 200 9132 "http://localhost:8080/admin/airflow/code?dag_id=log_analyzer&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:42 +0000] "GET /admin/airflow/duration?dag_id=log_analyzer&days=30&root= HTTP/1.1" 200 31948 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:43 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer&num_runs=&root= HTTP/1.1" 200 9339 "http://localhost:8080/admin/airflow/duration?dag_id=log_analyzer&days=30&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:45 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date= HTTP/1.1" 200 9128 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer&num_runs=&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:17:54,925] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:54 +0000] "POST /admin/airflow/paused?is_paused=false&dag_id=log_analyzer HTTP/1.1" 200 2 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:17:56,281] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:17:56 +0000] "POST /admin/airflow/paused?is_paused=true&dag_id=log_analyzer HTTP/1.1" 200 2 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:17:59,819] {{scheduler_job.py:949}} INFO - 3 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:17:02.946219+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:14:37.933738+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:17:59,834] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 3 task instances ready to be queued
+webserver_1  | [2021-10-21 21:17:59,835] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 0/16 running and queued tasks
+webserver_1  | [2021-10-21 21:17:59,836] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 1/16 running and queued tasks
+webserver_1  | [2021-10-21 21:17:59,837] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 2/16 running and queued tasks
+webserver_1  | [2021-10-21 21:17:59,846] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:14:37.933738+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:17:02.946219+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:17:59,866] {{scheduler_job.py:1132}} INFO - Setting the following 3 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:17:02.946219+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:14:37.933738+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:00:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:17:59,868] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 21, 21, 17, 2, 946219, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:17:59,871] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:17:02.946219+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:17:59,873] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 21, 21, 14, 37, 933738, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:17:59,874] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:14:37.933738+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:17:59,875] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 0, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 4) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:17:59,877] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:17:59,901] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:17:02.946219+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [[2021-10-21 21:17:59,906] {{2021-10-21 21:17:59,907] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:14:37.933738+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:01,878] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:01,909] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 125 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:01,910] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 3/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:01,930] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:01,961] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:01:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:01,965] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 1, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 4) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:01,969] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:01,984] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:02 +0000] "GET /admin/ HTTP/1.1" 200 27748 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:02 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:02 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 211 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:02 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1490 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:03,488] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:03 +0000] "POST /admin/airflow/paused?is_paused=false&dag_id=log_analyzer HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:03,581] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=349
+webserver_1  | [2021-10-21 21:18:03,743] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=352
+webserver_1  | [2021-10-21 21:18:03,805] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=351
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:06 +0000] "GET /admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running HTTP/1.1" 200 34237 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:06,689] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=364
+webserver_1  | [2021-10-21 21:18:06,847] {{__init__.py:51}} INFO - Using executor [LocalExecutor
+webserver_1  | 2021-10-21 21:18:06,849] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:06,854] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:06,854] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:06,879] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:06,884] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:00:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21T21:17:02.946219+00:00 [queued]> 9eb306c78d14
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21T21:14:37.933738+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:18:10,234] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:10,238] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:01:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:12 +0000] "POST /admin/dagrun/action/ HTTP/1.1" 302 359 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:13 +0000] "GET /admin/dagrun/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=running HTTP/1.1" 200 20971 "http://localhost:8080/admin/dagrun/?flt1_dag_id_equals=log_analyzer&flt2_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:15 +0000] "GET /admin/ HTTP/1.1" 200 27379 "http://localhost:8080/admin/dagrun/?flt0_dag_id_equals=log_analyzer&flt1_state_equals=running" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:15 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:15 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 105 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:15 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:20,814] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:20 +0000] "POST /admin/airflow/paused?is_paused=true&dag_id=log_analyzer HTTP/1.1" 200 2 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:23,914] {{scheduler_job.py:860}} WARNING - Set 1 task instances to state=None as their associated DagRun was not in RUNNING state
+webserver_1  | [2021-10-21 21:18:23,932] {{scheduler_job.py:949}} INFO - 2 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:23,943] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 2 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:23,944] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 0/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:23,945] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 1/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:23,954] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:23,972] {{scheduler_job.py:1132}} INFO - Setting the following 2 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:01:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:00:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:23,974] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 1, 0, 1, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:18:23,976] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:23,978] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 1, 0, 0, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 2) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:18:23,980] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:23,987] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-21 21:14:37.933738+00:00 exited with status success for try_number 1
+webserver_1  | [2021-10-21 21:18:24,000] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-21 21:17:02.946219+00:00 exited with status success for try_number 1
+webserver_1  | [2021-10-21 21:18:24,011] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-01 00:00:00+00:00 exited with status success for try_number 4
+webserver_1  | [2021-10-21 21:18:24,021] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-01 00:01:00+00:00 exited with status success for try_number 4
+webserver_1  | [[2021-10-21 21:18:24,069] {{local_executor.py:85}} INFO - 2021-10-21 21:18:24,069] {{local_executor.py:85}} INFO - QueuedLocalWorkerQueuedLocalWorker running  running ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | 
+webserver_1  | [2021-10-21 21:18:25,042] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:25 +0000] "POST /admin/airflow/trigger?dag_id=log_analyzer&origin=http://localhost:8080/admin/ HTTP/1.1" 302 263 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:25 +0000] "GET /admin/ HTTP/1.1" 200 28044 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:25 +0000] "GET /admin/airflow/dag_stats HTTP/1.1" 200 1792 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:25 +0000] "GET /admin/airflow/task_stats?dag_ids=log_analyzer HTTP/1.1" 200 1489 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:25 +0000] "GET /admin/airflow/blocked HTTP/1.1" 200 211 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [[2021-10-21 21:18:27,4202021-10-21 21:18:27,420] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=494
+webserver_1  | ] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=493
+webserver_1  | [2021-10-21 21:18:27,889] {{scheduler_job.py:949}} INFO - 3 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:03:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:18:25.035430+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:02:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:27,901] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 126 open slots and 3 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:27,902] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 2/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:27,903] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 3/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:27,904] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 4/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:27,915] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:02:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:03:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:18:25.035430+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:27,933] {{scheduler_job.py:1132}} INFO - Setting the following 3 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:03:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21 21:18:25.035430+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:02:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:27,934] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 3, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 4) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:27,935] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:03:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:27,936] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 21, 21, 18, 25, 35430, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:27,937] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:18:25.035430+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:27,938] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 2, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 4) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:27,939] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:02:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:28,047[] {{local_executor.py:85}} INFO - 2021-10-21 21:18:28,046] {{local_executor.py:85}} INFO - QueuedLocalWorkerQueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-21T21:18:25.035430+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py'] running 
+webserver_1  | ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:03:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:28,051] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:02:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:30 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer HTTP/1.1" 200 10059 "http://localhost:8080/admin/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:31,136] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:31,147] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:31,837] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:31,853] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:31,971] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:04:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:32,008] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 123 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:32,015] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 5/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:32,068] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:04:00+00:00 [scheduled]>
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:32 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&execution_date= HTTP/1.1" 200 9178 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:32,131] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:04:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:32,134] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 4, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:32,145] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:04:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:32,299] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:04:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01T00:01:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:18:33,259] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=526
+webserver_1  | [2021-10-21 21:18:33,781] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=525
+webserver_1  | [2021-10-21 21:18:33,989] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=523
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01T00:00:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:36 +0000] "GET /admin/airflow/tree?dag_id=log_analyzer&num_runs=&root= HTTP/1.1" 200 10413 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&execution_date=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:36,957] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:36,966] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:37,039] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:37,044] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:37,605] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=548
+webserver_1  | [2021-10-21 21:18:37,696] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:37,704] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:37,961] {{scheduler_job.py:949}} INFO - 2 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:05:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:37,997] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 124 open slots and 2 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:37,999] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 4/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:38,000] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 5/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:38,022] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:05:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:38,068] {{scheduler_job.py:1132}} INFO - Setting the following 2 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:05:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:01:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:38,074] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 5, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:38,091] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:05:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:38,094] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'AAPL_logging_errors', datetime.datetime(2021, 10, 1, 0, 1, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 2 and queue default
+webserver_1  | [2021-10-21 21:18:38,100] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'AAPL_logging_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:38,296] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:05:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:38,296] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'AAPL_logging_errors', '2021-10-01T00:01:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-21T21:18:25.035430+00:00 [queued]> 9eb306c78d14
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:02:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.models.taskinstance.TaskInstance using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | /usr/local/lib/python3.7/site-packages/airflow/utils/log/logging_mixin.py:64: DeprecationWarning: Initializing logger for airflow.operators.bash_operator.BashOperator using logger(), which will be replaced by .log in Airflow 2.0
+webserver_1  |   DeprecationWarning
+webserver_1  | [2021-10-21 21:18:50 +0000] [617] [INFO] Booting worker with pid: 617
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:03:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:50 +0000] "GET /admin/airflow/task?task_id=print_TSLA_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00 HTTP/1.1" 200 48035 "http://localhost:8080/admin/airflow/tree?dag_id=log_analyzer&num_runs=&root=" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:50 +0000] "GET /admin/admin/admin/js/form-1.0.0.js HTTP/1.1" 404 3862 "http://localhost:8080/admin/airflow/task?task_id=print_TSLA_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:52,385] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:52,391] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:18:52,802] {{scheduler_job.py:949}} INFO - 4 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-21 21:18:25.035430+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:02:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:06:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:52,829] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 125 open slots and 4 task instances ready to be queued
+webserver_1  | [2021-10-21 21:18:52,831] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 3/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:52,835] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 4/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:52,837] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 5/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:52,838] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 6/16 running and queued tasks
+webserver_1  | [2021-10-21 21:18:52,867] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:06:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:02:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-21 21:18:25.035430+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:00:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:18:52,926] {{scheduler_job.py:1132}} INFO - Setting the following 4 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-21 21:18:25.035430+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:02:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:06:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01 00:00:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:18:52,929] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 21, 21, 18, 25, 35430, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:18:52,931] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-21T21:18:25.035430+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:52,932] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 1, 0, 2, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:18:52,934] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:02:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:52,936] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 6, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:18:52,938] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:06:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:52,940] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'AAPL_logging_errors', datetime.datetime(2021, 10, 1, 0, 0, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 1) to executor with priority 2 and queue default
+webserver_1  | [2021-10-21 21:18:52,942] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'AAPL_logging_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:52,979] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.print_TSLA_errors execution_date=2021-10-01 00:00:00+00:00 exited with status success for try_number 2
+webserver_1  | [2021-10-21 21:18:53,008] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.print_TSLA_errors execution_date=2021-10-01 00:01:00+00:00 exited with status success for try_number 3
+webserver_1  | [2021-10-21 21:18:53,150] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:06:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py'][
+webserver_1  | 2021-10-21 21:18:53,150] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'AAPL_logging_errors', '2021-10-01T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:53,150] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:02:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:18:53,154] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-21T21:18:25.035430+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:04:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:18:56 +0000] "GET /admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00 HTTP/1.1" 200 9309 "http://localhost:8080/admin/airflow/task?task_id=print_TSLA_errors&dag_id=log_analyzer&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:18:58,346] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:18:58,359] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:18:58,370] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=594
+webserver_1  | [2021-10-21 21:18:58,600] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=595
+webserver_1  | [2021-10-21 21:19:00,925] {{scheduler_job.py:949}} INFO - 3 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:04:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:03:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:07:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:19:00,959] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 122 open slots and 3 task instances ready to be queued
+webserver_1  | [2021-10-21 21:19:00,963] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 6/16 running and queued tasks
+webserver_1  | [2021-10-21 21:19:00,976] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 7/16 running and queued tasks
+webserver_1  | [2021-10-21 21:19:00,979] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 8/16 running and queued tasks
+webserver_1  | [2021-10-21 21:19:01,006] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:07:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:03:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:04:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:19:01,077] {{scheduler_job.py:1132}} INFO - Setting the following 3 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:04:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:03:00+00:00 [queued]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:07:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:19:01,083] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 1, 0, 4, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:19:01,087] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:04:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:19:01,089] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'print_TSLA_errors', datetime.datetime(2021, 10, 1, 0, 3, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 2) to executor with priority 3 and queue default
+webserver_1  | [2021-10-21 21:19:01,100] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:03:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:19:01,103] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 7, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 3) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:19:01,111] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:07:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:19:01,133] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-21 21:18:25.035430+00:00 exited with status success for try_number 1
+webserver_1  | [2021-10-21 21:19:01,167] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-01 00:02:00+00:00 exited with status success for try_number 4
+webserver_1  | [[[2021-10-21 21:19:01,352] {{local_executor.py:2021-10-21 21:19:01,352] {{2021-10-21 21:19:01,352local_executor.py:85}} INFO85}} INFO - ] {{ - local_executor.py:85}} INFO - QueuedLocalWorker running QueuedLocalWorker running QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:03:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:07:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']['airflow', 'run', 'log_analyzer', 'print_TSLA_errors', '2021-10-01T00:04:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | 
+webserver_1  | 
+webserver_1  | [2021-10-21 21:19:04,345] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=634
+webserver_1  | [2021-10-21 21:19:04,615] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=639
+webserver_1  | [2021-10-21 21:19:05,295] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:05,369] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:05,479] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=636
+webserver_1  | [2021-10-21 21:19:07,415] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=633
+webserver_1  | [2021-10-21 21:19:07,534] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:07,558] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01T00:01:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:19:16 +0000] [710] [INFO] Booting worker with pid: 710
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:05:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:19:18,645] {{scheduler_job.py:949}} INFO - 1 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:08:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:19:18,703] {{scheduler_job.py:980}} INFO - Figuring out tasks to run in Pool(name=default_pool) with 120 open slots and 1 task instances ready to be queued
+webserver_1  | [2021-10-21 21:19:18,710] {{scheduler_job.py:1008}} INFO - DAG log_analyzer has 8/16 running and queued tasks
+webserver_1  | [2021-10-21 21:19:18,726] {{scheduler_job.py:1058}} INFO - Setting the following tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:08:00+00:00 [scheduled]>
+webserver_1  | [2021-10-21 21:19:18,773] {{scheduler_job.py:1132}} INFO - Setting the following 1 tasks to queued state:
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:08:00+00:00 [queued]>
+webserver_1  | [2021-10-21 21:19:18,781] {{scheduler_job.py:1168}} INFO - Sending ('log_analyzer', 'TSLA_logging_errors', datetime.datetime(2021, 10, 1, 0, 8, tzinfo=<TimezoneInfo [UTC, GMT, +00:00:00, STD]>), 2) to executor with priority 4 and queue default
+webserver_1  | [2021-10-21 21:19:18,802] {{base_executor.py:58}} INFO - Adding to queue: ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:08:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:19:18,814] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-01 00:03:00+00:00 exited with status success for try_number 4
+webserver_1  | [2021-10-21 21:19:18,836] {{scheduler_job.py:1311}} INFO - Executor reports execution of log_analyzer.TSLA_logging_errors execution_date=2021-10-01 00:04:00+00:00 exited with status success for try_number 3
+webserver_1  | [2021-10-21 21:19:19,045] {{local_executor.py:85}} INFO - QueuedLocalWorker running ['airflow', 'run', 'log_analyzer', 'TSLA_logging_errors', '2021-10-01T00:08:00+00:00', '--local', '--pool', 'default_pool', '-sd', '/usr/local/airflow/dags/Airflow_Analyzer.py']
+webserver_1  | [2021-10-21 21:19:20,358] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:20,434] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:26,189] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:26,254] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:26,251] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=672
+webserver_1  | [2021-10-21 21:19:26 +0000] [737] [INFO] Booting worker with pid: 737
+webserver_1  | [2021-10-21 21:19:26,456] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=673
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:19:26 +0000] "GET /admin/airflow/object/task_instances?dag_id=log_analyzer&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00 HTTP/1.1" 200 2141 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:19:27,471] {{settings.py:253}} INFO - settings.configure_orm(): Using pool settings. pool_size=5, max_overflow=10, pool_recycle=1800, pid=671
+webserver_1  | [2021-10-21 21:19:32,722] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:32,755] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | 172.21.0.1 - - [21/Oct/2021:21:19:32 +0000] "GET /admin/airflow/object/task_instances?dag_id=log_analyzer&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00 HTTP/1.1" 200 2141 "http://localhost:8080/admin/airflow/graph?dag_id=log_analyzer&root=&execution_date=2021-10-01T00%3A01%3A00%2B00%3A00" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15"
+webserver_1  | [2021-10-21 21:19:32,819] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:32,855] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-21T21:18:25.035430+00:00 [queued]> 9eb306c78d14
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01T00:06:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01T00:02:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:19:38,884] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:39,019] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | Running %s on host %s <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-01T00:00:00+00:00 [queued]> 9eb306c78d14
+webserver_1  | [2021-10-21 21:19:52 +0000] [779] [INFO] Booting worker with pid: 779
+webserver_1  | [2021-10-21 21:19:53,713] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:53,721] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags
+webserver_1  | [2021-10-21 21:19:54,205] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:54,213] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:54,267] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:54,282] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:55,897] {{__init__.py:51}} INFO - Using executor LocalExecutor
+webserver_1  | [2021-10-21 21:19:55,936] {{dagbag.py:403}} INFO - Filling up the DagBag from /usr/local/airflow/dags/Airflow_Analyzer.py
+webserver_1  | [2021-10-21 21:19:56,306] {{scheduler_job.py:949}} INFO - 5 tasks up for execution:
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:06:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_TSLA_errors 2021-10-01 00:05:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.print_AAPL_errors 2021-10-01 00:01:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.TSLA_logging_errors 2021-10-01 00:09:00+00:00 [scheduled]>
+webserver_1  |  <TaskInstance: log_analyzer.AAPL_logging_errors 2021-10-21 21:18:25.035430+00:00 [scheduled]>
