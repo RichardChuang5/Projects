@@ -7,7 +7,7 @@ generate a stream of transactions and you will write a Python script to process 
 of transactions to detect which ones are potential fraud.
 
 ### Steps
-In order to get the streaming application running, I first needed to create the essential files (app.py, Dockerfile, requirements.txt., transactions.py, docker-compose.kafka.yml and docker-compose.yml files). The steps would then proceed as follows for a successfully running Kafka streaming application:
+We first need to create a docker-compose.yml file, requirements.txt, and docker-compose.kafka.yml. The docker-compose.yml file will contain the contents of our generator and detector and our docker-compose.kafka.yml file will contain the details of our zookeeper/broker instance separately. The requirements file contains the contents required to install. Further steps noted below:
 
 - Run command to spin up broker and zookeeper: docker-compose -f docker-compose.kafka.yml up -d
 
