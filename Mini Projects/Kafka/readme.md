@@ -13,7 +13,7 @@ We first need to create a docker-compose.yml file, requirements.txt, and docker-
 
 - Run command to spin up generator and start producing infinite stream of messages: docker-compose up
 
-- Check to make sure everything is up and running as it should: docker exec. Using the container ID for kafka_broker_1, follow the command: docker exec -it <mycontainer> bash.
+- Check to make sure everything is up and running as it should: docker exec. follow the command: docker exec -it <mycontainer> bash.
 
 - Verify that I am able to produce messages: kafka-console-consumer --bootstrap-server localhost:9092 --topic queueing.transactions --from-beginning
 
